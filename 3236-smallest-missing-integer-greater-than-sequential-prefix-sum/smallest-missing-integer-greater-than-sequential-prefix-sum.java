@@ -12,12 +12,12 @@ class Solution {
             sum += arr[i];
             i++;
         } 
-        while(true){
-            if(set.contains(sum)){
-                sum +=1;
-            }
-            else return sum;
+        
+        while(set.contains(sum)){
+            sum ++;
         }
+        return sum;
+        
         // return sum;
     }
 }
