@@ -11,12 +11,12 @@ class Solution {
             adj.get(a).add(b);
             adj.get(b).add(a);
         }
-        bfs(start, adj, vist);
+        bfs(start, adj, vist,destination);
         if(vist[destination] )  return true;
         else return false;
     }
     
-    public void bfs(int source,List<List<Integer>> adj,boolean []vist){
+    public void bfs(int source,List<List<Integer>> adj,boolean []vist,int destination){
         int n = adj.size();
         vist[source] = true;
         Queue<Integer> q = new LinkedList<>();
@@ -27,6 +27,7 @@ class Solution {
                 if(vist[ele] == false){
                     vist[ele] = true;
                     q.add(ele);
+                    if(ele == destination) return ;
                 }
             }
         }
