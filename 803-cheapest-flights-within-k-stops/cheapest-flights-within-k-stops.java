@@ -8,7 +8,7 @@ class Solution {
             this.cost = cost;
         }
     }
-    public class Triplate implements Comparable<Triplate>{
+    public class Triplate{
         int node ;
         int cost;
         int stops;
@@ -17,11 +17,7 @@ class Solution {
             this.node = node;
             this.cost = cost;
         }
-        public int compareTo(Triplate t){
-            if(t.stops == this.stops) return Integer.compare(this.node, t.node);
-            return Integer.compare(this.stops, t.stops);
-
-        }
+        
 
     }
     public int findCheapestPrice(int n, int[][] flights, int src, int dst, int k) {
@@ -34,7 +30,7 @@ class Solution {
         int [] ans = new int[n];
         Arrays.fill(ans, Integer.MAX_VALUE);
         ans[src] = 0;
-        PriorityQueue<Triplate> pq  = new PriorityQueue<>();  //min heap;
+        Queue<Triplate> pq = new LinkedList<>();
         pq.add(new Triplate(src,0,0));
         while(pq.size()>0){
             Triplate top = pq.remove();
