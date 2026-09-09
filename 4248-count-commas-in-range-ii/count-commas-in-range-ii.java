@@ -6,11 +6,7 @@ class Solution {
             ans += n-start+1;
             start *=1000;
         }
-        
         return ans;
-        
-        
-        
     }
 
 }
