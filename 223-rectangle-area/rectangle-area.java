@@ -14,11 +14,7 @@ class Solution {
         
         int overlap_area = x_len * y_len;
         
-        System.out.println(org_area_1);
-        System.out.println(org_area_2);
-        System.out.println(overlap_area);
         return (org_area_1+org_area_2) - overlap_area;
-        
-        
+ 
     }
 }
