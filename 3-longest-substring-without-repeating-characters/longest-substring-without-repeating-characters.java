@@ -9,7 +9,6 @@ class Solution {
         while ( j<s.length()){
             int len =0;
             char ch = s.charAt(j);
-            
             if(map.containsKey(ch) && map.get(ch)>=i){
                 len = j-i;
                 max = Math.max(max,len);
