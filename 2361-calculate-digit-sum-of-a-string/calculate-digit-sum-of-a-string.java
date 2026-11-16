@@ -1,14 +1,14 @@
 class Solution {
     public String digitSum(String s, int k) {
-        while (s.length() > k) {
+        while(s.length() > k){
             StringBuilder sb = new StringBuilder();
-            for (int i = 0; i < s.length(); i += k) {
-                int sum = 0;
-                for (int j = i; j < Math.min(i + k, s.length()); j++) {
-                    sum += s.charAt(j) - '0';
+            int sum = 0;
+            for(int i =0; i <s.length(); i++){
+                sum += s.charAt(i) - '0';
+                if((i+1) % k == 0 || i+1 == s.length()){
+                    sb.append(sum);
+                    sum=0;
                 }
-                sb.append(sum);
-
             }
             s = sb.toString();
         }
