@@ -10,11 +10,9 @@ class Solution {
         int n = s.length();
         int start_Point = 0;
         int maxLen = -1;
-        int [][] dp = new int[1001][1001];
-        for (int i = 0; i < 1001; i++) {
-            for (int j = 0; j < 1001; j++) {
-                dp[i][j] = -1;
-            }
+        int [][] dp = new int[n][n];
+        for (int i = 0; i < n; i++) {
+             Arrays.fill(dp[i], -1);
 
         }
         for(int i=0; i<n; i++){
